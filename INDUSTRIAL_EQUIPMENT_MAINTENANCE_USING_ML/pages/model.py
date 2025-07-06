@@ -72,11 +72,11 @@ def model_run():
             st.write(":orange[Machine Failure Detected]")
 
             # Real time Notification
-            sender_email = "rahul.shinde@spit.ac.in"  # Replace with your email
-            receiver_email = "rahul.shinde@spit.ac.in"  # Replace with recipient's email
+            sender_email = "enter-email-id"  # Replace with your email
+            receiver_email = "enter-email-id"  # Replace with recipient's email
             subject = "Machine Failed Notification"
             message = f"Machine can be failed according to ML Model,Urgent Attention Needed"
-            email_password = "rahul@4495"  # Replace with your email password
+            email_password = "enter-email-password"  # Replace with your email password
             send_email(sender_email, receiver_email, subject, message, email_password)
         else:
             st.write(":green[No Machine Failure Detected]")
@@ -124,7 +124,7 @@ def model_run():
             ]
         )
         messages = chat_template.format_messages(cls=predicted_class, reg=predicted_rul, proba=probability)
-        chat = ChatOpenAI(openai_api_key="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")
+        chat = ChatOpenAI(openai_api_key="ENTER-OPENAI-API-KEY")
         response = chat(messages)
         st.header(":orange[LLM Based Decision System]")
         st.write(response.content)
